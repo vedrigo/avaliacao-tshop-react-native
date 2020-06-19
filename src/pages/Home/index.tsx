@@ -3,6 +3,7 @@ import {useNavigation} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import api from '../../services/api';
+import filmes from '../../services/filmes';
 
 import {
   Container,
@@ -35,9 +36,10 @@ const Home: React.FC = () => {
   const {navigate} = useNavigation();
 
   useEffect(() => {
-    api.get('/MostPopularMovies/k_qpl9kJN7').then((response) => {
-      setProviders(response.data.items);
-    });
+    // api.get('/MostPopularMovies/k_qpl9kJN7').then((response) => {
+    //   setProviders(response.data.items);
+    // });
+    setProviders(filmes.items);
   }, []);
 
   const navigateToMovieDetails = useCallback(
