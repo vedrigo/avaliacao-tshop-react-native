@@ -4,11 +4,11 @@
 
 # Desafio Avaliativo de React Native Aplicado pela T-Shop
 
-Este é um desafio feito pelo time do [Taki App](https://takiapp.com.br/) e aplicado pela [T-Shop](https://www.tshopapp.com.br/), para avaliação dos meus conhecimentos em React Native. As instruções originais para este desafio podem ser visto clicando [aqui](./doc/DESAFIO.md).
+Este é um desafio feito pelo time do [Taki App](https://takiapp.com.br/) e aplicado pela [T-Shop](https://www.tshopapp.com.br/), para avaliação dos meus conhecimentos em React Native. As instruções originais para este desafio podem ser visto clicando [aqui](doc/DESAFIO.MD).
 
 ## Teste o aplicativo
 
-Caso você tenha um smartphone android, você poderá ver este aplicativo funcionando diretamente nele. Apenas clique [aqui](./doc/assets/movie-app-alpha-0.1.0.apk) para baixar o app.
+Caso você tenha um smartphone android, você poderá ver este aplicativo funcionando diretamente nele. Clique [aqui](https://github.com/rodrigovenancioverissimo/avaliacao-tshop-react-native/releases/tag/v0.1.0-alpha) para baixar o app.
 
 Ou se preferir você pode rodar o aplicativo em mode desenvolvimento, executando os passos de instalação abaixo.
 
@@ -47,7 +47,7 @@ yarn ios
 Este último comando pode demorar em torno de 5 minutos na primeira vez.
 
 ## Prévias do App
+  <img src="doc/assets/previa.gif" width="250">
 
-<img src="./doc/assets/previa.gif" style="max-width: 300px; margin: auto; display: block;">
 
 Duvidas? Pergunte-me.
