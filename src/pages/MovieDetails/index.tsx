@@ -1,18 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import Icon from 'react-native-vector-icons/MaterialIcons';
-import {
-  Container,
-  MovieImage,
-  Title,
-  PlotLocal,
-  Like,
-  Scroll,
-  Button,
-} from './styles';
+import {Container, MovieImage, Title, PlotLocal, Scroll} from './styles';
 
 import api from '../../services/api';
 import filme from '../../services/filme';
 import {useRoute} from '@react-navigation/native';
+import Like from '../../components/Like';
 class Provider {
   id: string = '';
   title: string = '';
@@ -36,9 +28,6 @@ interface RouteParams {
 
 const MovieDetails: React.FC = () => {
   const [provider, setProvider] = useState(new Provider());
-  const [likeButtonColor, setLikeButtonColor] = useState('#fff');
-  const [dislikeButtonColor, setDislikeButtonColor] = useState('#fff');
-  const [likeStatus, setLikeStatus] = useState('');
 
   const route = useRoute();
 
@@ -51,38 +40,12 @@ const MovieDetails: React.FC = () => {
     setProvider(filme);
   }, [providerId]);
 
-  const handleLike = (action: string) => {
-    likeStatus === action ? setLikeStatus('') : setLikeStatus(action);
-  };
-
-  useEffect(() => {
-    if (likeStatus === '') {
-      setLikeButtonColor('#fff');
-      setDislikeButtonColor('#fff');
-    }
-    if (likeStatus === 'like') {
-      setLikeButtonColor('#ff9000');
-      setDislikeButtonColor('#fff');
-    }
-    if (likeStatus === 'dislike') {
-      setLikeButtonColor('#fff');
-      setDislikeButtonColor('#ff9000');
-    }
-  }, [likeStatus]);
-
   return (
     <Scroll>
       <Container>
         <Title>{provider.title}</Title>
         <MovieImage source={{uri: provider.image}} />
-        <Like>
-          <Button onPress={() => handleLike('like')}>
-            <Icon name="thumb-up" size={36} color={likeButtonColor} />
-          </Button>
-          <Button onPress={() => handleLike('dislike')}>
-            <Icon name="thumb-down" size={36} color={dislikeButtonColor} />
-          </Button>
-        </Like>
+        <Like />
         <PlotLocal>{provider.plotLocal}</PlotLocal>
       </Container>
     </Scroll>
