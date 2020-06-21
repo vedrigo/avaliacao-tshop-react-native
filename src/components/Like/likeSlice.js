@@ -17,6 +17,6 @@ export const likeSlice = createSlice({
 
 export const { like, dislike } = likeSlice.actions;
 
-export const selectLike = state => state.counter.value;
+export const selectLike = state => state.like.value;
 
 export default likeSlice.reducer;
